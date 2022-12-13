@@ -3975,6 +3975,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Pin,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.Button.Cnds.OnClicked,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.Sprite.Acts.Destroy,
@@ -3988,7 +3989,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Tilemap.Exps.Height,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
 		C3.Plugins.Sprite.Acts.SetPos,
-		C3.Plugins.Button.Cnds.OnClicked,
 		C3.Plugins.List.Cnds.CompareSelectedText,
 		C3.Plugins.TextBox.Exps.Text,
 		C3.Plugins.Sprite.Acts.MoveAtAngle,
@@ -4043,6 +4043,7 @@ self.C3_JsPropNameTable = [
 	{Radar: 0},
 	{GeoShip: 0},
 	{GeoFinish: 0},
+	{Home: 0},
 	{Value1: 0},
 	{Value2: 0},
 	{Value3: 0},
@@ -4205,6 +4206,10 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => Math.round(v0.GetValue());
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (Math.round(v0.GetValue()) * 32);
 		},
 		() => "Finish2",
 		() => "System3",
